@@ -21,3 +21,4 @@ topping = t.topping_set.all()
 
 for e in topping:
     print(e.text)
+
