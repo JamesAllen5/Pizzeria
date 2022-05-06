@@ -10,15 +10,4 @@ class Migration(migrations.Migration):
         ('MainApp', '0002_entry'),
     ]
 
-    operations = [
-        migrations.AlterModelOptions(
-            name='topping',
-            options={'verbose_name_plural': 'toppings'},
-        ),
-        migrations.AddField(
-            model_name='pizza',
-            name='owner',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
-            preserve_default=False,
-        ),
-    ]
+    

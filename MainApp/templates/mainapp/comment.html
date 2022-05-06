@@ -3,20 +3,8 @@
 
 {% block content %}
 <p>
-    {{ pizza }}
+    Comments {{ pizza }}
 </p>
-
-<ul>
-    {% for e in toppings %}
-    <li>
-        <p> {{ e.topping_name }}</p>
-    </li>
-    {% empty %}
-    <li> There are no toppings for this pizza.</li>
-    {% endfor %}
-</ul>
-
-<p><a href="{% url 'MainApp:comment' pizza.id %}">Add comment</a></p>
 
 <ul>
     {% for c in comments %}
@@ -28,5 +16,6 @@
     <li> There are no comments for this pizza.</li>
     {% endfor %}
 </ul>
+
 
 {% endblock content %}

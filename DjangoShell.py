@@ -9,16 +9,23 @@ from MainApp.models import Pizza
 pizzas = Pizza.objects.all() #same as select * From Topic
 
 for t in pizzas: #print topics
-    print(t.id, '   ',t.text)
+    print(t.id, '   ',t.pizza_name)
 
-t = Pizza.objects.get(id=1) #only print topics that id=1
+t = Pizza.objects.get(id=3) #only print topics that id=1
 
-print(t.text)
-print(t.date_added)
+print(t.pizza_name)
+#print(t.date_added)
 
 #print entries
 topping = t.topping_set.all()
 
 for e in topping:
-    print(e.text)
+    print(e.topping_name)
+
+
+comment = t.comment_set.all()
+
+for c in comment:
+    print(c.comment_entry)
+    print(c.date_added)
 
