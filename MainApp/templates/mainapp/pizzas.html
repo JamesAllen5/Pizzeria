@@ -3,21 +3,17 @@
 
 {% block content %}
 
-<p> Pizza: {{ pizza }}
-    
-</p>
+<p> Pizzas </p>
 
 <ul>
     {% for t in pizzas %}
 
     <li>
-        <a href="{% url 'MainApp:pizzas' t.id %}">{{t.text }} </a>
+        <a href="{% url 'MainApp:pizza' t.id %}">{{ t }} </a>
     </li>
     {% empty %}
     <li>No pizzas have been added yet.</li>
     {% endfor %}
 </ul>
-
-<a href="{% url 'MainApp:new_pizzas' %}">Add a new pizza</a>
 
 {% endblock content %}
