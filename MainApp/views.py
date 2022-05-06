@@ -39,10 +39,8 @@ def comment(request, pizza_id):
             comment = form.save(commit=False)
             comment.pizza = pizza
             comment.save()
-            return redirect('pizzas:pizza',pizza_id=pizza_id)
+            return redirect('MainApp:pizza',pizza_id=pizza_id)
 
     context = {'form':form, 'pizza':pizza}
 
     return render(request, 'MainApp/comment.html', context)
-
-

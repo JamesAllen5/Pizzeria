@@ -2,20 +2,19 @@
 
 
 {% block content %}
-<p>
-    Comments {{ pizza }}
-</p>
 
-<ul>
-    {% for c in comments %}
-    <li>
-        <p> {{ c.comment_entry }}</p>
-        <p> {{ c.date_added }}</p>
-    </li>
-    {% empty %}
-    <li> There are no comments for this pizza.</li>
-    {% endfor %}
-</ul>
+<p><a href="{% url 'MainApp:pizza' pizza.id %}">{{ pizza }} </a></p>
 
+<p> Add a new comment</p>
+
+<form action="{% url 'MainApp:comment' pizza.id %}" method='post'>
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button name="submit">Add comment</button>
+
+</form>
 
 {% endblock content %}
