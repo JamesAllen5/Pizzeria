@@ -1,10 +1,17 @@
 {% extends "MainApp/base.html" %}
 
+{% block page_header %}
+<div class="jumbotron">
+    <h1 class="display-3">Pizza Planet</h1>
 
-{% block content %}
-<p>
-    Welcome to Pizza Planet,
-    where the pizza is out of this world!
-</p>
+    <p class="lead">Where the Pizza is out of this world!</p>
 
-{% endblock content %}
+</div>
+
+<style>
+    body {
+        background-image: url(https://i.etsystatic.com/9343558/r/il/aaa7cc/1953321814/il_fullxfull.1953321814_he95.jpg)
+    }
+</style>
+
+{% endblock page_header %}

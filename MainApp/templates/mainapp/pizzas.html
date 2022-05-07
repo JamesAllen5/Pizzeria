@@ -1,5 +1,8 @@
 {% extends "MainApp/base.html" %}
 
+{% block page_header %}
+<h1>Pizzas</h1>
+{% endblock page_header %}
 
 {% block content %}
 
@@ -9,10 +12,15 @@
     {% for t in pizzas %}
 
     <li>
-        <a href="{% url 'MainApp:pizza' t.id %}">{{ t }} </a>
+        <h3>
+            <a href="{% url 'MainApp:pizza' t.id %}">{{ t }} </a>
+        </h3>
     </li>
+
     {% empty %}
-    <li>No pizzas have been added yet.</li>
+    <li>
+        <h3>No pizzas have been added yet.</h3>
+    </li>
     {% endfor %}
 </ul>
 
