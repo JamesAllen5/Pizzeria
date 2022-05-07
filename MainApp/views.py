@@ -20,9 +20,10 @@ def pizza(request, pizza_id):
     pizza = Pizza.objects.get(id=pizza_id)
 
     topping = pizza.topping_set.all()
+    picture = Pizza.picture
     comment = pizza.comment_set.order_by('-date_added')
 
-    context = {'pizza':pizza,'toppings':topping, 'comments':comment}
+    context = {'pizza':pizza,'toppings':topping, 'picture': picture, 'comments':comment}
 
     return render(request, 'MainApp/pizza.html', context)
 

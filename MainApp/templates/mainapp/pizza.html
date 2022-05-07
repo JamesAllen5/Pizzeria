@@ -16,6 +16,10 @@
     {% endfor %}
 </ul>
 
+<p>
+    <img src="{{ pizza.picture.url }}">
+</p>
+
 <p><a href="{% url 'MainApp:comment' pizza.id %}">Add comment</a></p>
 
 <ul>
